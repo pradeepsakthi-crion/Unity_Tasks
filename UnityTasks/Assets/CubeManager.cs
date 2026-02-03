@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
@@ -17,12 +18,13 @@ public class CubeManager : MonoBehaviour
     }
     void Start()
     {
-        SetCubeScale(slider.value);
+        SetCubeScale(slider.value=0.2f);
         slider.onValueChanged.AddListener(SetCubeScale);
     }
 
     void SetCubeScale(float value)
     {
         cube.localScale = new Vector3(value, value, value);
+        Debug.Log(value);
     }
 }
