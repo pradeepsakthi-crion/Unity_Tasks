@@ -32,7 +32,7 @@ public class TapToSpawn : MonoBehaviour
             {
                 Pose hitPose = hits[0].pose;
 
-                // Old object irundha destroy
+                // Old object  destroy
                 if (spawnedObject != null)
                 {
                     Destroy(spawnedObject);
