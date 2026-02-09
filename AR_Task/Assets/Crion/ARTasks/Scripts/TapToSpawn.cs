@@ -11,7 +11,7 @@ public class TapToSpawn : MonoBehaviour
     private ARRaycastManager raycastManager;
     private static List<ARRaycastHit> hits = new List<ARRaycastHit>();
 
-    private GameObject spawnedObject;
+    private GameObject _spawnedObject;
 
     void Start()
     {
@@ -33,20 +33,20 @@ public class TapToSpawn : MonoBehaviour
                 Pose hitPose = hits[0].pose;
 
                 // Old object  destroy
-                if (spawnedObject != null)
+                if (_spawnedObject != null)
                 {
-                    Destroy(spawnedObject);
+                    Destroy(_spawnedObject);
                 }
 
                 // New object spawn
-                spawnedObject = Instantiate(
+                _spawnedObject = Instantiate(
                     spawnPrefab,
                     hitPose.position,
                     Quaternion.identity
                 );
 
                 // Fixed size
-                spawnedObject.transform.localScale = fixedScale;
+                _spawnedObject.transform.localScale = fixedScale;
             }
         }
     }
